@@ -8,12 +8,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="header-controls">
-            <div class="language-switcher">
-                <button id="lang-jp" class="active">日本語</button>
-                <button id="lang-en">English</button>
+        <header class="app-header">
+            <div class="header-content">
+                <h1 class="app-title">47SiteseeingCard</h1>
+                <p class="app-subtitle">Beginner Edition</p>
             </div>
-        </div>
+            
+            <div class="language-switcher">
+                <button id="lang-jp" class="active">JP</button>
+                <button id="lang-en">EN</button>
+            </div>
+        </header>
 
         <div class="button-grid"></div>
         
@@ -40,17 +45,45 @@
                 </div>
 
                 <div class="section">
-                    <h3>御真言</h3>
+                    <h3>どんな方</h3>
                     <p id="modal-desc"></p>
                 </div>
 
                 <div class="section prediction-box">
-                    <h3>✨ 読み解き (General)</h3>
+                    <h3>ささやき</h3>
                     <p id="modal-b-general"></p>
                 </div>
 
+                <div class="section detail-box">
+                    <h3>仕事・恋愛・金運</h3>
+                    
+                    <div class="detail-row">
+                        <span class="detail-icon">🏢</span>
+                        <div class="detail-content">
+                            <strong>仕事</strong>
+                            <p id="modal-work"></p>
+                        </div>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-icon">💖</span>
+                        <div class="detail-content">
+                            <strong>恋愛</strong>
+                            <p id="modal-love"></p>
+                        </div>
+                    </div>
+
+                    <div class="detail-row">
+                        <span class="detail-icon">💰</span>
+                        <div class="detail-content">
+                            <strong>金運</strong>
+                            <p id="modal-money"></p>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="section advice-box">
-                    <h3>💡 アドバイス</h3>
+                    <h3>示唆の言葉</h3>
                     <p id="modal-b-cdn" class="highlight-text"></p>
                 </div>
             </div>

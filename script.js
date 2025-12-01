@@ -1,6 +1,6 @@
 // ==========================================
 // ★ここにGASのウェブアプリURLを貼り付けてください
-const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbxVp2WxEB8xUnxQxe6fL2tnQ-AWYWxFG4VI9YXHrDrpc96M0lh3tZMvsVnuA3tzIG_NnQ/exec'; 
+const GAS_API_URL = 'https://script.google.com/macros/s/xxxxxxxxxxxxxxxxx/exec'; 
 // ==========================================
 
 // 要素の取得
@@ -37,7 +37,7 @@ async function initApp() {
         renderButtons(); // ボタン描画
     } catch (error) {
         console.error('Error:', error);
-        buttonGrid.innerHTML = '<p>データの読み込みに失敗しました。</p>';
+        buttonGrid.innerHTML = '<p style="padding:20px; text-align:center;">データの読み込みに失敗しました。</p>';
     }
 }
 
@@ -100,9 +100,18 @@ function openModal(item) {
     document.getElementById('modal-element').textContent = item.Elements || '-';
     document.getElementById('modal-direction').textContent = item.Direction || '-';
 
-    // 初学者用テキスト (B_シリーズ)
+    // 1. どんな方 (御真言)
     document.getElementById('modal-desc').textContent = isJP ? item.DeityDesc_JP : item.DeityDesc_EN;
+    
+    // 2. ささやき (General)
     document.getElementById('modal-b-general').textContent = isJP ? item.B_General_JP : item.B_General_EN;
+    
+    // 3. 仕事・恋愛・金運 (★新規追加部分)
+    document.getElementById('modal-work').textContent = isJP ? item.B_Interp_Work_JP : item.B_Interp_Work_EN;
+    document.getElementById('modal-love').textContent = isJP ? item.B_Interp_Love_JP : item.B_Interp_Love_EN;
+    document.getElementById('modal-money').textContent = isJP ? item.B_Interp_Money_JP : item.B_Interp_Money_EN;
+
+    // 4. 示唆の言葉 (CDN)
     document.getElementById('modal-b-cdn').textContent = isJP ? item.B_CDN_JP : item.B_CDN_EN;
 
     // 表示
