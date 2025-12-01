@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>47SiteseeingCard (Beginner)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-controls">
+            <div class="language-switcher">
+                <button id="lang-jp" class="active">日本語</button>
+                <button id="lang-en">English</button>
+            </div>
+        </div>
+
+        <div class="button-grid"></div>
+        
+        <nav class="pagination">
+            <button id="prev-page" disabled>&lt; Prev</button>
+            <span id="page-info"></span>
+            <button id="next-page" disabled>Next &gt;</button>
+        </nav>
+    </div>
+
+    <div id="detail-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body">
+                <h2 id="modal-title"></h2>
+                <div class="image-container">
+                    <img id="modal-image" src="" alt="">
+                </div>
+                
+                <div class="attributes-grid">
+                    <span id="modal-no" class="tag"></span>
+                    <span id="modal-element" class="tag"></span>
+                    <span id="modal-direction" class="tag"></span>
+                </div>
+
+                <div class="section">
+                    <h3>御真言</h3>
+                    <p id="modal-desc"></p>
+                </div>
+
+                <div class="section prediction-box">
+                    <h3>✨ 読み解き (General)</h3>
+                    <p id="modal-b-general"></p>
+                </div>
+
+                <div class="section advice-box">
+                    <h3>💡 アドバイス</h3>
+                    <p id="modal-b-cdn" class="highlight-text"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
