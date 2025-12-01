@@ -1,6 +1,6 @@
 // ==========================================
 // ★ここにGASのウェブアプリURLを貼り付けてください
-const GAS_API_URL = 'https://script.google.com/macros/s/xxxxxxxxxxxxxxxxx/exec'; 
+const GAS_API_URL = 'https://script.google.com/macros/s/AKfycbxVp2WxEB8xUnxQxe6fL2tnQ-AWYWxFG4VI9YXHrDrpc96M0lh3tZMvsVnuA3tzIG_NnQ/exec'; 
 // ==========================================
 
 // 要素の取得
