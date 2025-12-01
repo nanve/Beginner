@@ -75,6 +75,7 @@ body {
 /* --- ボタン一覧 --- */
 .button-grid {
     display: grid;
+    /* 幅は自動調整 (最小80px) */
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     justify-items: center;
@@ -85,7 +86,8 @@ body {
 .app-button {
     background: #fff;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    /* ★修正: アスペクト比（正方形）を維持しつつ、最大・最小の高さを制限しない */
+    aspect-ratio: 1 / 1; 
     border-radius: 18px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     display: flex;
@@ -96,6 +98,8 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
     padding: 8px;
     box-sizing: border-box;
+    /* ★追加: はみ出し防止 */
+    overflow: hidden; 
 }
 
 .app-button:active {
@@ -103,22 +107,27 @@ body {
 }
 
 .app-button img {
-    width: 70%;
-    height: 70%;
+    /* ★修正: 画像サイズを少し小さくして文字スペースを確保 */
+    width: 65%;
+    height: 65%;
     object-fit: contain;
     border-radius: 8px;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .app-button p {
-    font-size: 0.75rem;
+    /* ★修正: フォントサイズを少し小さくし、英語の長い文字に対応 */
+    font-size: 0.7rem; 
     margin: 0;
     text-align: center;
     font-weight: bold;
     width: 100%;
+    /* ★重要: 長い文字は「...」で省略する設定 */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    line-height: 1.2;
+    padding: 0 4px; /* 左右に少し余白 */
 }
 
 /* --- ページネーション --- */
