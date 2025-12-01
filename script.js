@@ -91,6 +91,16 @@ nextButton.onclick = () => {
 function openModal(item) {
     const isJP = currentLanguage === 'JP';
     
+    // ▼▼▼ ★見出し（タイトル）の言語切り替え ▼▼▼
+    document.getElementById('label-desc').textContent       = isJP ? 'どんな方' : 'Profile';
+    document.getElementById('label-prediction').textContent = isJP ? 'ささやき' : 'Whisper';
+    document.getElementById('label-detail').textContent     = isJP ? '仕事・恋愛・金運' : 'Work, Love, Money';
+    document.getElementById('label-work').textContent       = isJP ? '仕事' : 'Work';
+    document.getElementById('label-love').textContent       = isJP ? '恋愛' : 'Love';
+    document.getElementById('label-money').textContent      = isJP ? '金運' : 'Money';
+    document.getElementById('label-advice').textContent     = isJP ? '示唆の言葉' : 'Advice';
+    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
     // 基本情報
     document.getElementById('modal-title').textContent = isJP ? item.Name_JP : item.Name_EN;
     document.getElementById('modal-image').src = item.ImageUrl;
@@ -106,7 +116,7 @@ function openModal(item) {
     // 2. ささやき (General)
     document.getElementById('modal-b-general').textContent = isJP ? item.B_General_JP : item.B_General_EN;
     
-    // 3. 仕事・恋愛・金運 (★新規追加部分)
+    // 3. 仕事・恋愛・金運
     document.getElementById('modal-work').textContent = isJP ? item.B_Interp_Work_JP : item.B_Interp_Work_EN;
     document.getElementById('modal-love').textContent = isJP ? item.B_Interp_Love_JP : item.B_Interp_Love_EN;
     document.getElementById('modal-money').textContent = isJP ? item.B_Interp_Money_JP : item.B_Interp_Money_EN;
