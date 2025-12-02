@@ -87,7 +87,7 @@ body {
     background: #fff;
     width: 100%;
     /* ★修正: アスペクト比（正方形）を維持しつつ、最大・最小の高さを制限しない */
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 0.8; 
     border-radius: 18px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     display: flex;
@@ -96,7 +96,7 @@ body {
     justify-content: center;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-    padding: 4px;
+    padding: 6px 2px 2px 2px;
     box-sizing: border-box;
     /* ★追加: はみ出し防止 */
     overflow: hidden; 
@@ -108,11 +108,11 @@ body {
 
 .app-button img {
     /* ★修正: 画像サイズを少し小さくして文字スペースを確保 */
-    width: 65%;
-    height: 65%;
+    width: auto;
+    height: 80%;
     object-fit: contain;
     border-radius: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
 .app-button p {
