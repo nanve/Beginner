@@ -77,7 +77,7 @@ body {
     display: grid;
     /* 幅は自動調整 (最小80px) */
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 10px 20px;
     justify-items: center;
     padding: 20px;
     flex-grow: 1;
