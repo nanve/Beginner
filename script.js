@@ -17,7 +17,7 @@ const closeButton = document.querySelector('.close-button');
 
 // 設定値
 let allData = [];
-const itemsPerPage = 12;
+const itemsPerPage = 6;
 let currentPage = 1;
 let currentLanguage = 'JP';
 
