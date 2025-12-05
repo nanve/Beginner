@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>47Siteseeing Card (Beginner)</title> <link rel="stylesheet" href="style.css">
+    <title>47Siteseeing Card (Beginner)</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -33,15 +34,12 @@
         </footer>
     </div>
 
-
-
-    </div>
-
     <div id="detail-modal" class="modal hidden">
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <div id="modal-body">
                 <h2 id="modal-title"></h2>
+                
                 <div class="image-container">
                     <img id="modal-image" src="" alt="">
                 </div>
@@ -53,7 +51,7 @@
                 </div>
 
                 <div class="section">
-                    <h3 id="label-desc">どんな方</h3>
+                    <h3 id="label-desc">ご由緒</h3>
                     <p id="modal-desc"></p>
                 </div>
 
@@ -94,8 +92,24 @@
                     <h3 id="label-advice">示唆の言葉</h3>
                     <p id="modal-b-cdn" class="highlight-text"></p>
                 </div>
+
+                <div class="section link-box">
+                    <h3 id="label-location">聖地・所在地</h3>
+                    <div class="location-container">
+                        <div class="location-item">
+                            <span class="location-label" id="label-prefecture">都道府県：</span>
+                            <span id="modal-prefecture"></span>
+                        </div>
+                        <div class="location-item">
+                            <span class="location-label" id="label-holysite">聖地：</span>
+                            <a id="modal-holysite-link" href="" target="_blank" rel="noopener noreferrer"></a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

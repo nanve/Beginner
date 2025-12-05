@@ -91,7 +91,7 @@ nextButton.onclick = () => {
 function openModal(item) {
     const isJP = currentLanguage === 'JP';
     
-    // ▼▼▼ ★見出し（タイトル）の言語切り替え ▼▼▼
+    // ▼▼▼ 見出し（タイトル）の言語切り替え ▼▼▼
     document.getElementById('label-desc').textContent       = isJP ? 'どんな方' : 'Profile';
     document.getElementById('label-prediction').textContent = isJP ? 'ささやき' : 'Whisper';
     document.getElementById('label-detail').textContent     = isJP ? '仕事・恋愛・金運' : 'Work, Love, Money';
@@ -99,7 +99,12 @@ function openModal(item) {
     document.getElementById('label-love').textContent       = isJP ? '恋愛' : 'Love';
     document.getElementById('label-money').textContent      = isJP ? '金運' : 'Money';
     document.getElementById('label-advice').textContent     = isJP ? '示唆の言葉' : 'Advice';
-    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+    
+    // ★追加: 聖地エリアの見出し切り替え
+    document.getElementById('label-location').textContent   = isJP ? '聖地・所在地' : 'Holy Site & Location';
+    document.getElementById('label-prefecture').textContent = isJP ? '都道府県：' : 'Prefecture:';
+    document.getElementById('label-holysite').textContent   = isJP ? '聖地：' : 'Holy Site:';
+    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
     // 基本情報
     document.getElementById('modal-title').textContent = isJP ? item.Name_JP : item.Name_EN;
@@ -123,6 +128,27 @@ function openModal(item) {
 
     // 4. 示唆の言葉 (CDN)
     document.getElementById('modal-b-cdn').textContent = isJP ? item.B_CDN_JP : item.B_CDN_EN;
+
+    // ▼▼▼ ★追加: 聖地・リンク情報の表示処理 ▼▼▼
+    const prefectureEl = document.getElementById('modal-prefecture');
+    const holySiteLink = document.getElementById('modal-holysite-link');
+
+    // 都道府県の表示
+    prefectureEl.textContent = (isJP ? item.Prefecture_JP : item.Prefecture_EN) || '-';
+
+    // 聖地名の表示
+    const holySiteName = (isJP ? item.Holysite_JP : item.Holysite_EN) || '-';
+    holySiteLink.textContent = holySiteName;
+
+    // URLがある場合のみリンクを有効化
+    if (item.BlogUrl) {
+        holySiteLink.href = item.BlogUrl;
+        holySiteLink.classList.remove('no-link'); // リンク有効スタイル
+    } else {
+        holySiteLink.href = 'javascript:void(0)';
+        holySiteLink.classList.add('no-link'); // リンク無効スタイル（黒文字）
+    }
+    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
     // 表示
     modal.classList.remove('hidden');

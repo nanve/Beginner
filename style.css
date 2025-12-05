@@ -27,7 +27,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 影を少し濃くしました */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     border-bottom: 1px solid #ddd;
 }
 
@@ -39,21 +39,21 @@ body {
 .app-title {
     margin: 0;
     font-size: 1.2rem;
-    color: #333; /* 明るい背景なので文字は黒系維持 */
+    color: #333;
     font-weight: bold;
 }
 
 .app-subtitle {
     margin: 0;
     font-size: 0.75rem;
-    color: #555; /* 文字色を少し濃くして読みやすく */
+    color: #555;
     margin-top: 2px;
     font-weight: bold;
 }
 
 /* 言語切替ボタン */
 .language-switcher button {
-    background: #fff; /* ボタン背景を白にして際立たせる */
+    background: #fff;
     border: none;
     padding: 6px 10px;
     margin-left: 5px;
@@ -75,7 +75,6 @@ body {
 /* --- ボタン一覧 --- */
 .button-grid {
     display: grid;
-    /* 幅は自動調整 (最小80px) */
     grid-template-columns: repeat(2, 1fr);
     gap: 8px;
     justify-items: center;
@@ -86,7 +85,6 @@ body {
 .app-button {
     background: #fff;
     width: 100%;
-    /* ★修正: アスペクト比（正方形）を維持しつつ、最大・最小の高さを制限しない */
     aspect-ratio: 1 / 0.8; 
     border-radius: 18px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -98,7 +96,6 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
     padding: 6px 2px 2px 2px;
     box-sizing: border-box;
-    /* ★追加: はみ出し防止 */
     overflow: hidden; 
 }
 
@@ -107,7 +104,6 @@ body {
 }
 
 .app-button img {
-    /* ★修正: 画像サイズを少し小さくして文字スペースを確保 */
     width: auto;
     height: 80%;
     object-fit: contain;
@@ -116,18 +112,16 @@ body {
 }
 
 .app-button p {
-    /* ★修正: フォントサイズを少し小さくし、英語の長い文字に対応 */
     font-size: 0.7rem; 
     margin: 0;
     text-align: center;
     font-weight: bold;
     width: 100%;
-    /* ★重要: 長い文字は「...」で省略する設定 */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1.2;
-    padding: 0 4px; /* 左右に少し余白 */
+    padding: 0 4px;
 }
 
 /* --- ページネーション --- */
@@ -162,7 +156,7 @@ body {
     background: rgba(0,0,0,0.6);
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* 下からスライドイン */
+    align-items: flex-end;
     z-index: 1000;
     opacity: 0;
     visibility: hidden;
@@ -178,7 +172,7 @@ body {
     background: #fff;
     width: 100%;
     max-width: 600px;
-    height: 85vh; /* 画面の85% */
+    height: 85vh;
     border-radius: 20px 20px 0 0;
     padding: 25px;
     box-sizing: border-box;
@@ -251,13 +245,13 @@ body {
 
 /* セクション別のデザイン */
 .prediction-box {
-    background: #eef2ff; /* 薄い青 */
+    background: #eef2ff;
     padding: 15px;
     border-radius: 12px;
 }
 
 .detail-box {
-    background-color: #fffaf0; /* 薄いオレンジ */
+    background-color: #fffaf0;
     padding: 15px;
     border-radius: 12px;
     border: 1px solid #f0e6d2;
@@ -296,7 +290,7 @@ body {
 }
 
 .advice-box {
-    background: #fff8e1; /* 薄い黄色 */
+    background: #fff8e1;
     padding: 15px;
     border-radius: 12px;
 }
@@ -306,14 +300,62 @@ body {
     color: #d35400;
 }
 
+/* ★追加: 聖地・リンクエリアのスタイル */
+.link-box {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ccc;
+}
+
+.location-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.location-item {
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+.location-label {
+    font-weight: bold;
+    color: #666;
+    margin-right: 8px;
+    min-width: 80px; /* ラベルの幅を揃える */
+}
+
+#modal-holysite-link {
+    color: #007bff; /* リンクらしい青色 */
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#modal-holysite-link:hover {
+    color: #0056b3;
+    border-bottom: 1px solid #0056b3;
+}
+
+/* リンクがない時のスタイル */
+.no-link {
+    color: #333 !important;
+    pointer-events: none;
+    text-decoration: none;
+    border-bottom: none !important;
+}
+
 /* --- フッター (著作権表示) --- */
 .app-footer {
     width: 100%;
     padding: 20px 0;
     text-align: center;
-    border-top: 1px solid #e0e0e0; /* 上に細い線を入れて区切る */
-    margin-top: auto; /* コンテンツが少ない時も一番下に配置 */
-    background-color: #f1f3f5; /* 少しだけ背景色を変える */
+    border-top: 1px solid #e0e0e0;
+    margin-top: auto;
+    background-color: #f1f3f5;
 }
 
 .app-footer p {
@@ -324,6 +366,6 @@ body {
 }
 
 .copyright-notice {
-    font-size: 0.6rem !important; /* 注意書きは少し小さく */
+    font-size: 0.6rem !important;
     color: #aaa !important;
 }
